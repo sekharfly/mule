@@ -1,0 +1,61 @@
+<form role="form">
+
+    <div class="form-group">
+        <input type="text" class="form-control" id="name" ng-model="message.name" placeholder="Enter Name">
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" id="message" ng-model="message.text" placeholder="Enter Message">
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" id="channel" ng-model="message.channel" placeholder="Enter channel">
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" id="integrationId" ng-model="message.integrationId" placeholder="Enter integrationId">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" id="timestampUtc" ng-model="message.timestampUtc" placeholder="Enter timestampUtc">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" id="fromName" ng-model="message.fromName" placeholder="Enter from Name">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" id="fromId" ng-model="message.fromId" placeholder="Enter from Id">
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="save(message)">Send</button>
+    </table>
+</form>
+<hr>
+<ul class="list-group">
+    <li class="list-group-item">
+
+        <table class="table" border="1">
+            <thead>
+                <tr>
+                    <th>From Tenant</th>
+                    <th>Text</th>
+                    <th>Channel</th>
+                    <th>Time Stamp</th>
+                    <th>IntegrationId</th>
+                    <th>From EndUser</th>
+                    <th>From Id</th>
+                    <th>ReplayBack</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="message in messages">
+                    <td>{{message.name}}</td>
+                    <td>{{message.text}}</td>
+                    <td>{{message.channel}}</td>
+                    <td>{{message.timestampUtc}}</td>
+                    <td>{{message.integrationId}}</td>
+                    <td>{{message.fromName}}</td>
+                    <td>{{message.fromId}}</td>
+                    <td><a ng-click="send(message)">Replay</a></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+</ul>
